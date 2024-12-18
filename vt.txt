@@ -1,0 +1,11 @@
+vt
+1) การใช้ substr, v.insert(itr,e)
+
+min,max() รับแค่ int => (int)x.size()
+
+sort จากมากไปน้อย
+
+vt => sort(all(c), greater<ll>());
+set => set<ll, greater<ll>> s;
+
+กำหนดเป็นค่าลบก่อน แล้วค่อย sort ปกติก็ได้

@@ -1,0 +1,85 @@
+Vector
+
+vt<int> x(5,0); //0 0 0 0 0
+vt<int> y(x); //copy ค่ามา
+
+//คล้าย array
+v.size()
+v[i]
+
+//ใช้ iterator
+v.begin(), v.end() // v.begin() อาจเปลี่ยนถ้าหากเกิดการ push_back หรือ insert
+itr++, itr--
+เรียกใช้ข้อมูล *itr
+itr-v.begin() // แสดงค่าตำแหน่งเป็น index
+
+//ใช้ for each (range-based for loop ได้)
+for(auto itr=v.begin() ; itr!=v.end() ; itr++)
+for(auto t:v)
+
+//function
+v.push_back(e)
+v.pop_back(e)
+v.insert(itr,e)
+v.erase(itr)
+v.clear();
+v.empty() //ถ้าว่างจริง คืน true
+find(v.begin(),v.end(), e) //หาไม่เจอคืน v.end()
+sort(v.begin(),v.end())
+
+----------------- ----------------- -----------------
+
+Set
+
+เขียน s[i] ไม่ได้
+
+set<int> s ={1,2,3};
+set<int> s2(s); // copy ข้อมูล
+
+//ใช้ iterator ได้
+
+//function
+s.size()
+
+s.insert(e)
+s.erase(e)/s.erase(itr) //ต่างจาก vector ที่ได้แค่อ้าง itr
+s.clear()
+s.empty()
+s.find() //หาไม่เจอคืน s.end()
+
+----------------- ----------------- -----------------
+
+Map
+
+เรียกข้อมูลผ่านitr จะได้ key ที่เรียงแล้ว
+
+เปลี่ยน value ได้
+เช่น 
+m[name] = "Tom";
+m[name] = "Jerry";
+cout << m[name] ; // Jerry
+
+
+//ใช้ iterator
+m.begin() = ค่าของ key ที่น้อยสุด เพราะมันเรียง
+    
+เข้าใช้ข้อมูลด้วย *itr
+    - *itr.first = key
+    - *itr.second = value
+    - เช่น for(auto t:m) cout << t.first << t.second ;
+
+
+//function
+m.find() //ค้นแค่ key ถ้าไม่เจอคืน m.end()
+m.erase(itr)/m.erase(key) //อย่าลืมว่ามันเรียงลำดับให้ก่อน
+m.clear()
+m.empty()
+
+----------------- ----------------- -----------------
+
+sort จากน้อยไปมาก
+
+vector : sort(v.begin(),v.end(), greater<int>());
+
+set : set<int, greater<int>> s;
+
